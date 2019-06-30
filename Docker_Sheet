@@ -11,3 +11,53 @@ sudo systemctl start docker && sudo systemctl enable docker
 
 Add cloud_user to the docker group:
 sudo usermod -aG docker cloud_user
+
+
+docker container commands: 
+
+ls: List containers
+docker container ls
+
+run: Run a command in a new container
+docker run -d --name: -p -v <image_name>
+
+start: Start one or more stopped containers
+docker container start <container_id>
+
+stop: Stop one or more running containers
+docker container stop <container_id>
+
+exec: Run a command in a running container
+docker container exec -it <container_id> /bin/bash
+    type exit to get out of bash terminal of the container. Container will be still running.
+docker container exec -it <container_id> ls 
+
+stats: Display a live stream of container(s) resource usage statistics like cpu, memory usage.
+docker container stats <container_id>
+
+logs: Fetch the logs of a container
+docker container logs <container_id>
+
+inspect: Display detailed information on one or more containers
+docker container inspect <container_id>
+
+pause: Pause all processes within one or more containers
+docker container pause <container_id>
+
+unpause: Unpause all processes within one or more containers
+docker container unpause <container_id> 
+
+prune: Remove all stopped containers
+docker container prune
+
+
+port: List port mappings or a specific mapping for the container
+rename: Rename a container
+restart: Restart one or more containers
+attach: Attach local standard input, output, and error streams to a running container
+cp: Copy files/folders between a container and the local filesystem
+export: Export a container's filesystem as a tar archive
+kill: Kill one or more running containers
+top: Display the running processes of a container
+update: Update configuration of one or more containers
+wait: Block until one or more containers stop, then print their exit codes
