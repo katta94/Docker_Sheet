@@ -19,7 +19,7 @@ ls: List containers
 docker container ls
 
 run: Run a command in a new container
-docker run -d --name: -p -v <image_name>
+docker run -d --name busybox -p -v <image_name>
 
 start: Start one or more stopped containers
 docker container start <container_id>
@@ -41,6 +41,9 @@ docker container logs <container_id>
 inspect: Display detailed information on one or more containers
 docker container inspect <container_id>
 
+port: List port mappings or a specific mapping for the container 
+docker container port <container_id>
+
 pause: Pause all processes within one or more containers
 docker container pause <container_id>
 
@@ -50,8 +53,6 @@ docker container unpause <container_id>
 prune: Remove all stopped containers
 docker container prune
 
-
-port: List port mappings or a specific mapping for the container
 rename: Rename a container
 restart: Restart one or more containers
 attach: Attach local standard input, output, and error streams to a running container
