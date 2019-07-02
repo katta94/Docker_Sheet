@@ -35,6 +35,9 @@ docker container exec -it <container_id> ls
 stats: Display a live stream of container(s) resource usage statistics like cpu, memory usage.
 docker container stats <container_id>
 
+top: Display the running processes of a container
+docker container stats <container_id> 
+
 logs: Fetch the logs of a container
 docker container logs <container_id>
 
@@ -59,7 +62,6 @@ attach: Attach local standard input, output, and error streams to a running cont
 cp: Copy files/folders between a container and the local filesystem
 export: Export a container's filesystem as a tar archive
 kill: Kill one or more running containers
-top: Display the running processes of a container
 update: Update configuration of one or more containers
 wait: Block until one or more containers stop, then print their exit codes
 
