@@ -205,6 +205,21 @@ docker run -d \
   nginx
 
 
+Docker Events
+
+how to listen for events using the events command. Get real-time events from the server:
+docker system events
+docker system events --since '<TIME_PERIOD>'
+
+Filter for container events:
+docker system events --filter type=container --since '1h'
+
+Use multiple filters:
+docker system events --filter type=container --filter event=attach --filter event=die --filter event=stop
+
+
+
+
 
 
 
