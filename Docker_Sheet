@@ -65,6 +65,26 @@ kill: Kill one or more running containers
 update: Update configuration of one or more containers
 wait: Block until one or more containers stop, then print their exit codes
 
+Managing Stopped Container. manage stopped containers by starting, deleting, or pruning them.
+
+Remove all stopped containers:
+docker container prune
+
+List the IDs of all containers:
+docker container ls -a -q
+
+List all stopped containers:
+docker container ls -a -f status=exited
+
+List the IDs of stopped containers:
+docker container ls -a -q -f status=exited
+
+Get a count of all stopped containers:
+docker container ls -a -q -f status=exited | wc -l
+
+Get a listing of our containers named promethus:
+docker container ls -a -f status=exited | grep prometheus
+
 
 Docker Network commands
 
