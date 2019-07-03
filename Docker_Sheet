@@ -85,6 +85,11 @@ docker container ls -a -q -f status=exited | wc -l
 Get a listing of our containers named promethus:
 docker container ls -a -f status=exited | grep prometheus
 
+Start exited docker containers 
+docker start $(docker ps -a -q --filter "status=exited")   or 
+docker start  `docker ps -q -l` # restart it in the background
+docker attach `docker ps -q -l` # reattach the terminal & stdin
+
 
 Docker Network commands
 
