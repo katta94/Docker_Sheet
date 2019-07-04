@@ -6,3 +6,62 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 Test Docker Compose:
 docker-compose --version
+
+Create a compose service:
+docker-compose up -d
+
+List containers created by compose:
+docker-compose ps
+
+Stopping a compose service:
+docker-compose stop
+
+Starting a compose service:
+docker-compose start
+
+Restarting a compose service:
+docker-compose restart
+
+Delete a compose service:
+docker-compose down
+
+IF we are using a dockerfile and docker-compose file to run the app,the docker-compose file is as below. 
+Docker file contains the details on what weather app container should have. In compose file build option shows it is using docker file to build the weather app container, 
+context . shows that docker file is in the same directory where docker-compose file is also exists. we are passing arguments to the docker file here.
+when there is a change in docker file, run the docker-compose build commnad before docker-compose up so that it will Rebuild the image.
+
+git clone https://github.com/linuxacademy/content-weather-app.git weather-app
+cd weather-app
+
+Create a docker-compose.yml file:
+vi docker-compose.yml
+
+docker-compose.yml contents:
+
+version: '3'
+services:
+  weather-app:
+    build:
+      context: .
+      args:
+        - VERSION=v2.0
+    ports:
+      - "8081:3000"
+    environment:
+      - NODE_ENV=production
+
+Create the compose container:
+docker-compose up -d
+
+List compose services:
+docker-compose ps
+
+Verify the weather-app is working:
+curl http://localhost:8081
+
+Rebuild the image:
+docker-compose build
+
+Rebuild the image with no cache:
+docker-compose build --no-cache
+
