@@ -65,3 +65,47 @@ docker-compose build
 Rebuild the image with no cache:
 docker-compose build --no-cache
 
+
+
+Docker Swarm 
+
+Initialize the manager:
+docker swarm init \
+--advertise-addr [PRIVATE_IP of the swarm master]
+
+Add the worker to the cluster:
+docker swarm join --token [TOKEN] \
+[PRIVATE_IP]:2377
+
+List the nodes in the swarm (cmd on swarm master):
+docker node ls
+
+
+Managing swarm nodes:
+
+Listing nodes:
+docker node ls
+
+Inspecting a node:
+docker node inspect [NODE_NAME]
+
+Promoting a worker to a manager:
+docker node promote [NODE_NAME]
+
+Demoting a manager to a worker:
+docker node demote [NODE_NAME]
+
+Removing a node form the swarm (node must be demoted first):
+docker node rm -f [NODE_NAME]
+
+Make a node leave the swarm:
+docker swarm leave
+
+Getting the join-token:
+docker swarm join-token [worker|manager]
+
+Make the node rejoin the swarm:
+docker swarm join --token [TOKEN] \
+<PRIVATE_IP>:2377
+
+
