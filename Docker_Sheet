@@ -29,6 +29,7 @@ docker container stop <container_id>
 
 exec: Run a command in a running container
 docker container exec -it <container_id> /bin/bash
+docker container exec -it <container_id> /bin/sh  (some continers don't have bash installed)
     type exit to get out of bash terminal of the container. Container will be still running.
 docker container exec -it <container_id> ls 
 
