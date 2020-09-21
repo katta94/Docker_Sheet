@@ -71,6 +71,12 @@ Managing Stopped Container. manage stopped containers by starting, deleting, or 
 Remove all stopped containers:
 docker container prune
 
+Remove all images without at least one container associated to them
+docker image prune -a
+
+The following Deletes or removes images created before 2017-01-04T00:00:00
+docker image prune -a --force --filter "until=2017-01-04T00:00:00"
+
 List the IDs of all containers:
 docker container ls -a -q
 
