@@ -13,6 +13,9 @@ sudo systemctl status docker
 
 sudo dockerd --> to toubleshoot and know info about docker-engine 
 
+rm -rf /var/lib/docker --> this will remove all images & containers 
+
+/etc/docker/daemon.json is the configuration file used by docker.
 
 
 Add cloud_user to the docker group:
