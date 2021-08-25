@@ -9,6 +9,12 @@ runc exits once the container starts. Process is complete, and container is runn
 Enable and start Docker:
 sudo systemctl start docker && sudo systemctl enable docker
 
+sudo systemctl status docker
+
+sudo dockerd --> to toubleshoot and know info about docker-engine 
+
+
+
 Add cloud_user to the docker group:
 sudo usermod -aG docker cloud_user
 
