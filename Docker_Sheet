@@ -17,6 +17,8 @@ rm -rf /var/lib/docker --> this will remove all images & containers
 
 /etc/docker/daemon.json is the configuration file used by docker.
 
+Docker API listen on /var/run/docker.sock
+
 
 Add cloud_user to the docker group:
 sudo usermod -aG docker cloud_user
